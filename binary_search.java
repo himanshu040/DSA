@@ -26,7 +26,7 @@ public class binary_search {
             System.out.printf("%d is not4 present in array", k);
 
         }
-
+       ac.close();
 
     }
     

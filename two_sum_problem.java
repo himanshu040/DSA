@@ -32,6 +32,8 @@ Constraints:
 1 <= BOOK[i], TARGET <= 10^6
 Time Limit: 1 sec */
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -54,7 +56,7 @@ public class two_sum_problem {
         }
         System.out.print("Enter Target: ");
         int target=ac.nextInt();
-        System.out.println(read(n,arr,target));
+        System.out.println(Arrays.toString(twoSum(arr,target)));
 
     }
      public static String read(int n, int []book, int target){
@@ -69,6 +71,24 @@ public class two_sum_problem {
         }
         return "NO";
 
+    }
+    public static int[] twoSum(int[] nums, int target) {
+        int[] result=new int[2];
+       HashMap<Integer, Integer> mpp = new HashMap<>();
+       
+       for(int i=0;i<nums.length;i++)
+       {
+          int comp=target-nums[i];
+          if(mpp.containsKey(comp))
+          {
+            result[0]=mpp.get(comp);
+            result[1]=i;
+            return result;
+          }
+          mpp.put(nums[i],i);
+       }
+       return result;
+        
     }
     
 }

@@ -57,6 +57,7 @@ public class two_sum_problem {
         System.out.print("Enter Target: ");
         int target=ac.nextInt();
         System.out.println(Arrays.toString(twoSum(arr,target)));
+        ac.close();
 
     }
      public static String read(int n, int []book, int target){

@@ -83,7 +83,7 @@ public class longest_cosecutive_sequence {
         // return max;
 
         Set<Integer> set = new HashSet<>();
-        int cnt;
+        int cnt=0;
         int longest=1;
         if(nums.length==0){
         return 0;}

@@ -1,4 +1,4 @@
-class Solution {
+class Rotate2dArray {
 
 
 

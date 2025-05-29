@@ -42,11 +42,12 @@ while(left<=right&&top<=bottom)
             result.add(matrix[bottom][i]);
         }
         bottom--;}
-         for(int i=bottom;i>=top;i--)
+        if(left<=right)
+      {   for(int i=bottom;i>=top;i--)
         {
             result.add(matrix[i][left]);
         }
-        left++;
+        left++;}
 }
 return result;
 

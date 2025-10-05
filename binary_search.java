@@ -16,14 +16,14 @@ public class binary_search {
         }
         System.out.print("Enter number to find: ");
         int k=ac.nextInt();
-        boolean r=SolutionBinary.searchInSorted(arr, k);
-        if(r==true)
+        int r=SolutionBinary.searchInSorted(arr, k);
+        if(r!=-1)
         {
-            System.out.printf("%d is present in array", k);
+            System.out.printf("%d is present in array at %d", k, r);
         }
         else
         {
-            System.out.printf("%d is not4 present in array", k);
+            System.out.printf("%d is not present in array", k);
 
         }
        ac.close();
@@ -34,16 +34,34 @@ public class binary_search {
 
 
 class SolutionBinary {
-    static boolean searchInSorted(int arr[], int k) {
+    static int searchInSorted(int nums[], int target) {
         
-        for(int i=0;i<arr.length;i++)
+        int s=0;
+       int e=nums.length-1;
+
+       while(s<=e)
+       {
+          int mid = s + (e - s) / 2;
+
+        if(nums[mid]==target)
         {
-            if(arr[i]==k)
-            {
-                return true;
-            }
+            return mid;
         }
-        return false;
+          
+          if(nums[mid]<target)
+          {
+            s=mid+1;
+          }
+          else
+          {
+            e=mid-1;
+          }
+
+        
+
+       }
+
+    return -1;
         // Your code here
     }
 }

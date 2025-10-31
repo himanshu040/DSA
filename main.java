@@ -1,10 +1,10 @@
 public class main {
 
-    public static void main(String[] args) {
+    public static void main (String[] args) {
      
-        string_to_int s=new string_to_int();
+        search_insert_position s=new search_insert_position();
 
-        int v=s.atoi("");
+        int v=s.searchInsert(new int[] {1,3,5,6 },  7 );
 
         System.out.println(v);
     

@@ -194,6 +194,68 @@ Return True if both stacks are empty. This operation is O(1).
 
 📂 File
 
-➡️ [**queue_using_stack.java**](./queue_using_stack.java)  
+➡️ [**queue_using_stack.java**](./queue_using_stack.java) 
+
+
+
+
+🔢 Search Insert Position — Java Solution
+
+Date: 10/31/2025
+
+📘 Problem Statement
+
+Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+You must write an algorithm with O(log n) runtime complexity.
+
+ 
+
+Example 1:
+
+Input: nums = [1,3,5,6], target = 5
+Output: 2
+Example 2:
+
+Input: nums = [1,3,5,6], target = 2
+Output: 1
+Example 3:
+
+Input: nums = [1,3,5,6], target = 7
+Output: 4
+
+🧠 Algorithm Steps
+
+Initialization:
+
+Initialize Left and Right Pointers
+left = 0
+right = len(nums) - 1
+Explanation: We initialize two pointers, left and right. left starts at the beginning of the list (0), and right starts at the end of the list (len(nums) - 1). These pointers help in performing the binary search.
+Binary Search Loop
+while left <= right:
+Explanation: This while loop continues as long as left is less than or equal to right. The condition ensures that we are still considering a valid portion of the list to search.
+Calculate Midpoint
+mid = (left + right) // 2
+Explanation: Calculate the middle index mid of the current range defined by left and right. The // operator performs integer division.
+Check if Midpoint is Target
+if nums[mid] == target:
+    return mid
+Explanation: If the element at the midpoint (nums[mid]) is equal to the target, we have found the target, and we return the index mid.
+Adjust Right Pointer
+elif nums[mid] > target:
+    right = mid - 1
+Explanation: If the element at the midpoint (nums[mid]) is greater than the target, it means the target must be in the left half of the current range. We adjust the right pointer to mid - 1 to narrow the search to the left half.
+Adjust Left Pointer
+else:
+    left = mid + 1
+Explanation: If the element at the midpoint (nums[mid]) is less than the target, it means the target must be in the right half of the current range. We adjust the left pointer to mid + 1 to narrow the search to the right half.
+Return Insertion Point
+return left
+
+
+📂 File
+
+➡️ [**queue_using_stack.java**](./search_insert_position.java)  
 
 

@@ -256,6 +256,6 @@ return left
 
 📂 File
 
-➡️ [**queue_using_stack.java**](./search_insert_position.java)  
+➡️ [**search_insert_position.java**](./search_insert_position.java)  
 
 

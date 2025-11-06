@@ -2,11 +2,13 @@ public class main {
 
     public static void main (String[] args) {
      
-        search_insert_position s=new search_insert_position();
+        first_last_sorted_array s=new first_last_sorted_array();
 
-        int v=s.searchInsert(new int[] {1,3,5,6 },  7 );
+        int[] v=s.searchRange(new int[] {5,7,7,8,8,10},  7 );
 
-        System.out.println(v);
+        
+        System.out.println(v[0]);
+        System.out.println(v[1]);
     
 
     }

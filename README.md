@@ -259,3 +259,58 @@ return left
 ➡️ [**search_insert_position.java**](./search_insert_position.java)  
 
 
+
+
+🔢 Find the first or last occurrence of a given number in a sorted array — Java Solution
+
+Date: 11/06/2025
+
+📘 Problem Statement
+
+Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
+
+If target is not found in the array, return [-1, -1].
+
+You must write an algorithm with O(log n) runtime complexity.
+
+ 
+
+Example 1:
+
+Input: nums = [5,7,7,8,8,10], target = 8
+Output: [3,4]
+Example 2:
+
+Input: nums = [5,7,7,8,8,10], target = 6
+Output: [-1,-1]
+
+🧠 Algorithm Steps
+
+As asked in the problem we need to return the first and second appearence of the question so we can create array of size 2 initially assigned with -1 -1
+        int []arr={-1,-1};
+Why Binary Search
+we could have done this in one traversing with linear search but int this case TC -> O(n) so to avoide that we will use binary seach TC -> O(logn)
+Make calls
+Call the Binarysearch with same indexesthe diff is for the first index 0 w'll keep searching to the left of mid once element found
+        arr[0]= binarySearchLessThan(nums,target,start,end,result);
+and same her well search for right side of the mid once target found
+        arr[1]= binarySearchGreaterThan(nums,target,start,end,result);
+Binary Magic
+Once Element found
+Left Case
+        if(nums[mid]==target){
+            result=mid;
+            start=mid+1;
+        }
+Right case
+        if(nums[mid]==target){
+            result=mid;
+            end=mid-1;
+        }
+Other then this everything is binary Search
+
+📂 File
+
+➡️ [**first_last_sorted_array.java**](./first_last_sorted_array.java)  
+
+
